@@ -12,6 +12,8 @@ import com.ps.repos.ReviewRepo;
 import com.ps.repos.UserRepo;
 import com.ps.services.OperationsService;
 
+import java.time.LocalDate;
+
 /**
  * Created by iuliana.cosmina on 3/7/16.
  */
@@ -26,10 +28,17 @@ public class SimpleOperationsService implements OperationsService {
     public Response createResponse(Long sitterId, Long requestId) {
         // get sitter
         // TODO 1. retrieve sitter * request  (according to diagram 2.5)
+        Request request = requestRepo.findById(requestId);
+        User user = userRepo.findById(sitterId);
+
 
         //create a response
         Response response = new Response();
         //TODO 2. populate & save the response object
+        response.setRequest(request);
+        response.setUser(user);
+        response.setResponseStatus(ResponseStatus.ACCEPTED);
+
         return response;
     }
 

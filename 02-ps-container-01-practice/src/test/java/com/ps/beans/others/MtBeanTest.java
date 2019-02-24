@@ -19,7 +19,17 @@ public class MtBeanTest {
     public void testConfig() {
         //TODO 6. Modify this class to use the new set of configuration files, created by resolving TODO 5.
         //TODO 7. Try to use wildcards as well.
+
+        /*
+            Wl; Load the context in a string delimited way
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring/others/sample-config-01.xml",
+                "classpath:spring/others/wilson-conversion.xml",
+                "classpath:spring/others/wilson-factory.xml");
+        */
+
+        // Currently loading by loading other context in the sample-config.xml <import resource="classpath:spring/others/wilson-*"/>
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring/others/sample-config-01.xml");
+
 
         MultipleTypesBean mtBean = (MultipleTypesBean) ctx.getBean("mtBean");
         assertNotNull(mtBean);

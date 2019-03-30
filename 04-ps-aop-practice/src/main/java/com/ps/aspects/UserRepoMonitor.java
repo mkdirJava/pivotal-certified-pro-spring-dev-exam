@@ -77,6 +77,7 @@ public class UserRepoMonitor {
         long t1 = System.currentTimeMillis();
         try {
             return joinPoint.proceed(); //TODO 25. Call the target method
+            //DONE
         } finally {
             long t2 = System.currentTimeMillis();
             logger.info(" ---> Execution of " + methodName + " took: " + (t2 - t1) / 1000 + " ms.");

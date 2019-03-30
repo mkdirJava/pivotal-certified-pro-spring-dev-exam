@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
  * Created by iuliana.cosmina on 6/2/16.
  */
 //TODO 21. Declare this class as an aspect
+    //DONE
 @Aspect
 @Component
 public class UserRepoMonitor {
@@ -22,6 +23,7 @@ public class UserRepoMonitor {
     private static final Logger logger = Logger.getLogger(UserRepoMonitor.class);
 
     /*TODO 26. Declare this method as a Before advice and use as pointcut expression the expression
+     //DONE
      associated with the "repoUpdate" from the "PointcutContainer" class */
     @Before("com.ps.aspects.PointcutContainer.serviceUpdate(service, id, pass)")
     public void beforeServiceUpdate(UserService service, Long id, String pass) throws Throwable {
@@ -33,6 +35,7 @@ public class UserRepoMonitor {
     }
 
     /*TODO 22. Declare this method as a AfterReturning advice and create a pointcut expression that matches any method
+    //DONE
      with the name starting with "update" that is defined in a class with the name containing "Service" */
     @AfterReturning(value="execution (* com.ps.services.*Service+.update*(..))", returning = "result")
     public void afterServiceUpdate(JoinPoint joinPoint, int result) throws Throwable {
@@ -44,6 +47,7 @@ public class UserRepoMonitor {
     }
 
     /*TODO 23. Declare this method as a AfterThrowing advice and create a pointcut expression that matches any method
+    //DONE
      named updateUsername that is defined in a class with the name containing "Service" */
     @AfterThrowing(value="execution ( * com.ps.services.*Service+.updateUsername(..))", throwing = "e")
     public void afterBadUpdate(JoinPoint joinPoint, Exception e) throws Throwable {
@@ -64,6 +68,7 @@ public class UserRepoMonitor {
     }
 
     /*TODO 24. Declare this method as an Around advice and create a pointcut expression that matches any method
+    //DONE
      with the name starting with "find" that is defined in a class with the name containing "Repo" */
     @Around("execution(public * com.ps.repos.*.*Repo+.find*(..))")
     public Object monitorFind(ProceedingJoinPoint joinPoint) throws Throwable {

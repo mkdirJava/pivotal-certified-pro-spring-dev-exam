@@ -23,7 +23,7 @@ public class ComplexBean2 {
         this.simpleBean1 = simpleBean1;
     }
 
-    // TODO 10. Add JSR 250 attributes to control initialization and destruction of this bean
+    // DONE 10. Add JSR 250 attributes to control initialization and destruction of this bean
     // DONE
 
     public void setSimpleBean2(SimpleBean simpleBean2) {

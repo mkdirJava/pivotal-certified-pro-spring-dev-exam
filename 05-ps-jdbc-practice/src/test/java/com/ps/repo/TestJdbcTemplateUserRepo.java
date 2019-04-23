@@ -4,13 +4,11 @@ import com.ps.config.AppConfig;
 import com.ps.config.TestDataConfig;
 import com.ps.repos.UserRepo;
 import com.ps.ents.User;
-import com.ps.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
@@ -34,6 +32,7 @@ public class TestJdbcTemplateUserRepo {
     @Qualifier("userTemplateRepo")
     UserRepo userRepo;
 
+
     @Before
     public void setUp() {
         assertNotNull(userRepo);
@@ -49,6 +48,7 @@ public class TestJdbcTemplateUserRepo {
     public void testNoFindById() {
         // TODO 27: Use the JdbcTemplate instance to query for a user that does not exist and make this test pass
         User user = null;
+        userRepo.findById(999l);
         assertEquals("Darius", user.getUsername());
     }
 

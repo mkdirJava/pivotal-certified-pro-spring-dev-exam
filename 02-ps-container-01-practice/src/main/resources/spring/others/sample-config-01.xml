@@ -7,7 +7,7 @@
     <!-- imports the other configurations by regex -->
     <import resource="classpath:spring/others/wilson-*"/>
 
-    <!-- TODO 5. Split this file in multiple configuration files. -->
+    <!-- DONE 5. Split this file in multiple configuration files. -->
     <!-- DONE -->
     <bean id="mtBean" class="com.ps.beans.others.MultipleTypesBean">
         <property name="noOne" value="1"/>

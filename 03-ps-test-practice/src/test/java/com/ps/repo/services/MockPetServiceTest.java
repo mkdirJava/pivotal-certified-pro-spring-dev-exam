@@ -24,8 +24,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Created by iuliana.cosmina on 4/17/16.
  */
-//TODO 16. Add all necessary annotations for the tests to pass
-//DONE
+//DONE 16. Add all necessary annotations for the tests to pass
 @RunWith(MockitoJUnitRunner.class)
 public class MockPetServiceTest {
 

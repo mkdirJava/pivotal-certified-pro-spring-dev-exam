@@ -17,10 +17,9 @@ public class MtBeanTest {
 
     @Test
     public void testConfig() {
-        //TODO 6. Modify this class to use the new set of configuration files, created by resolving TODO 5.
-        //DONE
-        //TODO 7. Try to use wildcards as well.
-        //DONE
+        //DONE 6. Modify this class to use the new set of configuration files, created by resolving
+        //DONE 5.
+        //DONE 7. Try to use wildcards as well.
 
         /*
             Wl; Load the context in a string delimited way

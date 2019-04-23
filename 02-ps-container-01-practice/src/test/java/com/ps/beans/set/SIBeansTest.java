@@ -27,8 +27,8 @@ public class SIBeansTest {
             logger.info("Bean " + beanName + " of type " + ctx.getBean(beanName).getClass().getSimpleName());
         }
 
-        //TODO 4. Retrieve beans of types ComplexBean and make sure their dependencies were correctly set.
-        //DONE
+        //DONE 4. Retrieve beans of types ComplexBean and make sure their dependencies were correctly set.
+
         ComplexBeanImpl bean0 = (ComplexBeanImpl) ctx.getBean("complexBean0");
         ComplexBeanImpl bean1 = (ComplexBeanImpl) ctx.getBean ("complexBean1");
         ComplexBean2Impl bean2 = (ComplexBean2Impl) ctx.getBean("complexBean2");

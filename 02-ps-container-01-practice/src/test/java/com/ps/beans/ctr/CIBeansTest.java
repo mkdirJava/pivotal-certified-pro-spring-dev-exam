@@ -25,7 +25,7 @@ public class CIBeansTest {
             logger.info("Bean " + beanName + " of type " + ctx.getBean(beanName).getClass().getSimpleName());
         }
 
-        //TODO 3. Retrieve beans of types ComplexBean and make sure their dependencies were correctly set.
+        //DONE 3. Retrieve beans of types ComplexBean and make sure their dependencies were correctly set.
         //DONE
         ComplexBeanImpl complexBean0 = (ComplexBeanImpl) ctx.getBean("complexBean0");
         assertNotNull(complexBean0.getSimpleBean());

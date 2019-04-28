@@ -4,6 +4,8 @@ import com.ps.config.AppConfig;
 import com.ps.config.TestDataConfig;
 import com.ps.ents.User;
 import com.ps.repos.UserRepo;
+import com.sun.xml.internal.ws.policy.AssertionSet;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,8 +48,26 @@ public class TestNamedJdbcTemplateUserRepo {
 
     @Test
     public void testNoFindById() {
-        User user = userRepo.findById(99L);
+        User user = userRepo.findById(1L);
         assertEquals("John", user.getUsername());
     }
+
+    @Test
+    public void testCreateUser(){
+        Integer created = userRepo.createUser(6l,"Tony","123Spill","TimeToGo@here.com");
+        Assert.assertNotNull(created);
+        Assert.assertEquals(created.longValue(),1l);
+
+    }
+
+    @Test
+    public void testDeleteById(){
+        Integer deleted = userRepo.deleteById(2l);
+        Assert.assertNotNull(deleted);
+        Assert.assertEquals(deleted.longValue(),1l);
+
+    }
+
+
     
 }
